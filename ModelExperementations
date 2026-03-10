@@ -1,0 +1,25 @@
+looked throught the web and found out that the best way will be to create python script, that will get table as input, run itself to parse table and get  desired result.
+i was experimenting with pretty high weighted models, dropping down in size to find a point where results will be unusable. The most challanging part - was to wait for model to download. Huge models ~64 GB did prety well overall, but later it was decied that it will be unnecesary to
+run models localy, so size isnt a metter anymore. 
+here is an overvieew of the models i tested, mostly experimented with random table data on small tables to find out a point when models will not be able to produce runnable script. Didnt have any particular criteria 
+
+I experimented with promts and results aiming to get in the field of bad results and there to rank them with some stated criteria finding the optimal size. This did overall well enough:
+
+Qwen3.5-397B-A17B-GGUF - too big, even with highest quantization UD-IQ1_M weights 107 GB
+
+Qwen3.5-35B-A3B-GGUF 16-bit BF16 69.4 GB
+Qwen3.5-35B-A3B-GGUF 8-bit Q8_0 36.9 GB | UD-Q8_K_XL 48.7 GB
+
+
+Meta-Llama-3-70B-Instruct-GGUF Q6_K 57.9 GB | Q5_K_M 49.9 GB | Q4_K_M 42.5 GB
+
+
+DeepSeek-Coder-V2-Instruct-GGUF IQ1_M 52.7 GB
+
+Qwen3-Coder-30B-A3B-Instruct-GGUF Q8_0 32.5 GB
+
+Seed-OSS-36B-Instruct-GGUF Q8_0 38.4 GB
+
+models to consider:
+Gpt-oss-20B
+
